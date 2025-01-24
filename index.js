@@ -1,6 +1,18 @@
 const express = require('express');
 const { resolve } = require('path');
 
+require("dotenv").config();
+
+const config = {
+  apiKey: process.env.API_KEY,
+  serverSecret: process.env.SERVER_SECRET,
+  isKalvian: process.env.IS_KALVIAN === 'true',
+};
+
+module.exports = config;
+console.log(config)
+
+
 const app = express();
 const port = 3010;
 
